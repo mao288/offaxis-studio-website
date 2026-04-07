@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Off Axis Studio — Guías de Producción Musical para Principiantes</title>
+<meta name="description" content="Aprende mezcla, mastering, efectos y más con guías directas, sin tecnicismos. Descarga inmediata en PDF. +10,000 productores ya empezaron.">
+<meta name="author" content="Off Axis Studio — Alonso Cuadros">
+<meta name="theme-color" content="#08080a">
+<meta name="robots" content="index, follow">
+
+<!-- Canonical — ACTUALIZAR con la URL final de producción -->
+<link rel="canonical" href="https://linksoffaxisstudio.netlify.app/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://res.cloudinary.com/diobgaxfl/image/upload/v1770839834/OffAxis-Logo-iconoweb_utqxdm.png">
+<link rel="apple-touch-icon" href="https://res.cloudinary.com/diobgaxfl/image/upload/w_180,q_auto,f_auto/v1770839834/OffAxis-Logo-iconoweb_utqxdm.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Off Axis Studio — Guías de Producción Musical">
+<meta property="og:description" content="Aprende mezcla, mastering, efectos y más con guías directas, sin tecnicismos. Descarga inmediata. +10,000 productores ya empezaron.">
+<meta property="og:image" content="https://res.cloudinary.com/diobgaxfl/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1770839837/Logo-Off-Axis-para-web-principal_bjwm3d.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://linksoffaxisstudio.netlify.app/">
+<meta property="og:site_name" content="Off Axis Studio">
+<meta property="og:locale" content="es_MX">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Off Axis Studio — Guías de Producción Musical">
+<meta name="twitter:description" content="Aprende mezcla, mastering, efectos y más con guías directas, sin tecnicismos. +10,000 productores ya empezaron.">
+<meta name="twitter:image" content="https://res.cloudinary.com/diobgaxfl/image/upload/w_1200,h_630,c_fill,q_auto,f_auto/v1770839837/Logo-Off-Axis-para-web-principal_bjwm3d.png">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://res.cloudinary.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08080a;
+    --bg-card: #111115;
+    --bg-card-h: #17171c;
+    --text: #eeeae4;
+    --text-2: #8e8e96;
+    --text-3: #55555c;
+    --amber: #e8a232;
+    --amber-h: #f2b340;
+    --amber-dim: rgba(232,162,50,0.10);
+    --amber-glow: rgba(232,162,50,0.20);
+    --green: #34d399;
+    --green-dim: rgba(52,211,153,0.10);
+    --hot: #ef4444;
+    --border: rgba(255,255,255,0.06);
+    --border-h: rgba(255,255,255,0.10);
+    --r: 14px;
+    --r-lg: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  .glow {
+    position: fixed;
+    top: -180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(ellipse, var(--amber-glow) 0%, transparent 70%);
+    opacity: 0.35;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: pulse 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 0.3; transform: translateX(-50%) scale(1); }
+    100% { opacity: 0.22; transform: translateX(-50%) scale(1.12); }
+  }
+
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 48px 32px 64px;
+  }
+
+  /* ===================== HEADER ===================== */
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  .hero-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 20px;
+  }
+
+  .hero-muppet {
+    width: 110px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 6px 20px rgba(0,0,0,0.4));
+    animation: muppetWave 3s ease-in-out infinite;
+  }
+
+  @keyframes muppetWave {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(2deg); }
+  }
+
+  .hero-logo {
+    max-width: 360px;
+  }
+
+  .hero-logo img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 24px rgba(232,162,50,0.15));
+  }
+
+  .header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .tagline {
+    font-size: 0.84rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .header-socials {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .header-social {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .header-social:hover {
+    background: var(--bg-card-h);
+    border-color: var(--border-h);
+    transform: translateY(-2px);
+  }
+
+  .header-social svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-2);
+    transition: fill 0.2s;
+  }
+
+  .header-social:hover svg { fill: var(--text); }
+
+  /* ===================== DIVIDER ===================== */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 36px 0 20px;
+  }
+
+  .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .divider span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-3);
+    white-space: nowrap;
+  }
+
+  /* ===================== PACK CARDS ===================== */
+  .packs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .pack {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid rgba(232,162,50,0.12);
+    border-radius: var(--r-lg);
+    cursor: pointer;
+    transition: all 0.28s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .pack::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--amber), transparent);
+    z-index: 2;
+  }
+
+  .pack:hover {
+    border-color: rgba(232,162,50,0.28);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4), 0 0 0 1px rgba(232,162,50,0.08);
+  }
+
+  .pack-visual {
+    position: relative;
+    height: 220px;
+    background: linear-gradient(135deg, #141418, #0e0e12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .pack-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+    z-index: 1;
+  }
+
+  .pack-visual img {
+    height: 88%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 28px rgba(0,0,0,0.55));
+    position: relative;
+    z-index: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .pack:hover .pack-visual img { transform: scale(1.05); }
+
+  .pack-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 4px 10px;
+    background: var(--hot);
+    color: #fff;
+    font-size: 0.64rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    z-index: 3;
+  }
+
+  .pack-badge.best { background: var(--amber); color: var(--bg); }
+
+  .pack-body {
+    padding: 22px 24px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pack h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.18rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .pack-desc {
+    font-size: 0.84rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+
+  .pack-includes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 18px;
+  }
+
+  .pack-includes span {
+    padding: 4px 9px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 5px;
+    font-size: 0.7rem;
+    color: var(--text-3);
+    font-weight: 500;
+  }
+
+  .pack-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .pack-price {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .pack-price small {
+    font-size: 0.74rem;
+    font-weight: 500;
+    color: var(--text-3);
+    margin-left: 4px;
+  }
+
+  .pack-cta {
+    padding: 10px 22px;
+    background: var(--amber);
+    color: var(--bg);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    border-radius: 9px;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .pack:hover .pack-cta {
+    background: var(--amber-h);
+    box-shadow: 0 4px 20px rgba(232,162,50,0.35);
+  }
+
+  /* ===================== MUPPET INTERSTITIAL ===================== */
+  .muppet-interstitial {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 0;
+  }
+
+  .muppet-inter-img {
+    width: 80px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+  }
+
+  .muppet-inter-img img { width: 100%; height: auto; }
+
+  .muppet-inter-bubble {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px 12px 12px 4px;
+    padding: 14px 20px;
+    font-size: 0.84rem;
+    color: var(--text-2);
+    line-height: 1.55;
+    position: relative;
+  }
+
+  .muppet-inter-bubble strong {
+    color: var(--amber);
+    font-weight: 700;
+  }
+
+  /* ===================== GUIDES GRID ===================== */
+  .guides-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .guide-link {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r);
+    overflow: hidden;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .guide-link:hover {
+    background: var(--bg-card-h);
+    border-color: rgba(232,162,50,0.15);
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.35);
+  }
+
+  .guide-img {
+    height: 200px;
+    background: linear-gradient(135deg, #12121a, #0c0c10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .guide-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 45%;
+    background: linear-gradient(to top, var(--bg-card), transparent);
+    z-index: 1;
+  }
+
+  .guide-img img {
+    height: 88%;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.55));
+    transition: transform 0.3s ease;
+  }
+
+  .guide-link:hover .guide-img img {
+    transform: scale(1.06) translateY(-3px);
+  }
+
+  .guide-body {
+    padding: 20px 20px 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .guide-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  .guide-price-tag {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 0.95rem;
+    color: var(--amber);
+  }
+
+  .guide-new-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--green);
+    color: var(--bg);
+    font-size: 0.58rem;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .guide-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.94rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .guide-hook {
+    font-size: 0.78rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    flex: 1;
+  }
+
+  .guide-arrow {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 0.85rem;
+    color: var(--text-3);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.2s;
+  }
+
+  .guide-link:hover .guide-arrow {
+    opacity: 1;
+    transform: translateX(0);
+    color: var(--amber);
+  }
+
+  /* ===================== FREE GUIDE ===================== */
+  .free-cta {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 28px;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(52,211,153,0.06), rgba(52,211,153,0.02));
+    border: 1px solid rgba(52,211,153,0.18);
+    border-radius: var(--r-lg);
+    padding: 28px 32px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .free-cta:hover {
+    border-color: rgba(52,211,153,0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(52,211,153,0.08);
+  }
+
+  .free-img {
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .free-img img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.45));
+    transition: transform 0.3s ease;
+  }
+
+  .free-cta:hover .free-img img { transform: scale(1.06); }
+
+  .free-content {}
+
+  .free-cta-label {
+    display: inline-block;
+    padding: 3px 10px;
+    background: var(--green);
+    color: var(--bg);
+    font-size: 0.64rem;
+    font-weight: 700;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+  }
+
+  .free-cta h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 5px;
+  }
+
+  .free-cta p {
+    font-size: 0.84rem;
+    color: var(--text-2);
+    line-height: 1.55;
+  }
+
+  .free-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .free-muppet {
+    width: 72px;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.35));
+    animation: muppetCelebrate 2s ease-in-out infinite;
+  }
+
+  @keyframes muppetCelebrate {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-4px) rotate(-3deg); }
+    75% { transform: translateY(-4px) rotate(3deg); }
+  }
+
+  .free-cta-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--green);
+    color: var(--bg);
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 10px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .free-cta:hover .free-cta-btn {
+    box-shadow: 0 6px 20px rgba(52,211,153,0.3);
+  }
+
+  /* ===================== MUPPET QUOTE STRIP ===================== */
+  .muppet-strip {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 36px;
+    padding: 24px 28px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+  }
+
+  .muppet-strip-img {
+    width: 80px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.4));
+  }
+
+  .muppet-strip-img img { width: 100%; height: auto; }
+
+  .muppet-strip-text { flex: 1; }
+
+  .muppet-quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-2);
+    line-height: 1.6;
+    margin-bottom: 6px;
+  }
+
+  .muppet-author {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: var(--amber);
+  }
+
+  /* ===================== BOTTOM BAR ===================== */
+  .bottom-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .bottom-links {
+    display: flex;
+    gap: 6px;
+  }
+
+  .bottom-link {
+    padding: 8px 16px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-3);
+    transition: all 0.2s;
+  }
+
+  .bottom-link:hover {
+    color: var(--amber);
+    border-color: rgba(232,162,50,0.15);
+    background: var(--amber-dim);
+  }
+
+  .copyright { font-size: 0.7rem; color: var(--text-3); }
+
+  /* ===================== ANIMATIONS ===================== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim { animation: fadeUp 0.5s ease both; }
+  .d1 { animation-delay: 0.06s; }
+  .d2 { animation-delay: 0.12s; }
+  .d3 { animation-delay: 0.18s; }
+  .d4 { animation-delay: 0.24s; }
+  .d5 { animation-delay: 0.30s; }
+  .d6 { animation-delay: 0.36s; }
+  .d7 { animation-delay: 0.42s; }
+  .d8 { animation-delay: 0.48s; }
+  .d9 { animation-delay: 0.54s; }
+
+  /* ===================== TABLET ===================== */
+  @media (max-width: 860px) {
+    .page { max-width: 620px; padding: 40px 24px 56px; }
+    .packs-row { grid-template-columns: 1fr; }
+    .guides-grid { grid-template-columns: repeat(2, 1fr); }
+    .free-cta { grid-template-columns: auto 1fr; }
+    .free-right { grid-column: 1 / -1; flex-direction: row; justify-content: center; }
+    .bottom-bar { flex-direction: column; gap: 16px; text-align: center; }
+    .header-socials { display: none; }
+    .header-bottom { justify-content: center; }
+    .tagline { text-align: center; }
+    .hero-muppet { width: 90px; }
+  }
+
+  /* ===================== MOBILE ===================== */
+  @media (max-width: 520px) {
+    .page { padding: 28px 16px 44px; }
+
+    .header { gap: 12px; }
+    .hero-logo { max-width: 240px; }
+    .hero-muppet { width: 70px; }
+    .hero-banner { gap: 16px; }
+    .tagline { font-size: 0.8rem; }
+
+    .divider { margin: 24px 0 14px; }
+
+    .pack-visual { height: 170px; }
+    .pack-body { padding: 18px 18px 20px; }
+    .pack h3 { font-size: 1.02rem; }
+    .pack-desc { font-size: 0.78rem; }
+
+    .muppet-interstitial { gap: 14px; }
+    .muppet-inter-img { width: 56px; }
+    .muppet-inter-bubble { padding: 12px 16px; font-size: 0.8rem; }
+
+    .guides-grid { grid-template-columns: 1fr; gap: 10px; }
+
+    .guide-link { flex-direction: row; align-items: center; }
+
+    .guide-img {
+      width: 80px;
+      height: 90px;
+      flex-shrink: 0;
+      border-radius: var(--r) 0 0 var(--r);
+    }
+    .guide-img::after { display: none; }
+    .guide-img img { height: 80%; }
+
+    .guide-body { padding: 14px 16px; }
+    .guide-hook { display: none; }
+    .guide-title { font-size: 0.86rem; margin-bottom: 2px; }
+    .guide-arrow { display: none; }
+
+    .free-cta {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 22px 20px;
+    }
+    .free-img { width: 80px; margin: 0 auto; }
+    .free-cta h3 { font-size: 0.98rem; }
+    .free-right { flex-direction: column; }
+    .free-muppet { width: 56px; }
+
+    .muppet-strip { flex-direction: column; text-align: center; gap: 14px; padding: 20px; }
+    .muppet-strip-img { width: 64px; }
+
+    .bottom-links { flex-wrap: wrap; justify-content: center; }
+    .bottom-bar { gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="glow"></div>
+
+<div class="page">
+
+  <!-- ============ HEADER ============ -->
+  <div class="header">
+    <div class="hero-banner">
+      <img class="hero-muppet" src="https://res.cloudinary.com/diobgaxfl/image/upload/w_250,q_auto,f_auto/v1770837568/freepik_br_6abbc60b-a05c-4014-a8e8-bd06eb5321e7_fwnhug.png" alt="Don Fader saludando">
+      <div class="hero-logo">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_600,q_auto,f_auto/v1770839837/Logo-Off-Axis-para-web-principal_bjwm3d.png" alt="Off Axis Studio">
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="tagline">Guías de producción musical para principiantes. Directas, sin relleno. Descarga inmediata.</div>
+      <div class="header-socials">
+        <a href="https://www.tiktok.com/@off.axis.studio" target="_blank" class="header-social" title="TikTok">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.79a4.84 4.84 0 01-1-.1z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCaXkQlTawulemdvuext5xvA" target="_blank" class="header-social" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 00.5 6.19 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.81 3.02 3.02 0 002.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 002.12-2.14A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.81zM9.54 15.57V8.43L15.82 12l-6.28 3.57z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/offaxisstudiofb" target="_blank" class="header-social" title="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.8v8.44C19.61 23.08 24 18.09 24 12.07z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PACKS ============ -->
+  <div class="divider anim d1"><span>🔥 Packs en oferta</span></div>
+
+  <div class="packs-row anim d2">
+    <a href="https://pay.hotmart.com/I101511641W?checkoutMode=10" target="_blank" class="pack">
+      <div class="pack-visual">
+        <div class="pack-badge best">⭐ Más vendido</div>
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_500,q_auto,f_auto/v1771429709/5_iyy3wm.png" alt="Pack 5 Guías">
+      </div>
+      <div class="pack-body">
+        <h3>Pack 5 Guías — El sistema completo</h3>
+        <p class="pack-desc">De la idea al master final. Mezcla, efectos, mastering, voces y composición en un solo paquete.</p>
+        <div class="pack-includes">
+          <span>Mezcla</span>
+          <span>Efectos</span>
+          <span>Mastering</span>
+          <span>Vocal</span>
+          <span>Composición</span>
+        </div>
+        <div class="pack-bottom">
+          <div class="pack-price">$35 USD</div>
+          <div class="pack-cta">Comprar →</div>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://pay.hotmart.com/W101512210T?checkoutMode=10" target="_blank" class="pack">
+      <div class="pack-visual">
+        <div class="pack-badge">Oferta</div>
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_500,q_auto,f_auto/v1771429709/3_g0iqqz.png" alt="Bundle 3 en 1">
+      </div>
+      <div class="pack-body">
+        <h3>Bundle 3 en 1 — Producción esencial</h3>
+        <p class="pack-desc">Mezcla + efectos + mastering. El flujo esencial para sonar profesional.</p>
+        <div class="pack-includes">
+          <span>Mezcla</span>
+          <span>Efectos</span>
+          <span>Mastering</span>
+        </div>
+        <div class="pack-bottom">
+          <div class="pack-price">$21 USD</div>
+          <div class="pack-cta">Comprar →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ============ MUPPET INTERSTITIAL ============ -->
+  <div class="muppet-interstitial anim d3">
+    <div class="muppet-inter-img">
+      <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_180,q_auto,f_auto/v1770837565/paralibrolanding_kt8xrm.png" alt="Don Fader señalando">
+    </div>
+    <div class="muppet-inter-bubble">
+      ¿No necesitas un pack completo? Elige <strong>la guía que más necesitas</strong> y empieza a aplicar hoy mismo. Cada una cuesta menos que un café. ☕
+    </div>
+  </div>
+
+  <!-- ============ GUÍAS INDIVIDUALES ============ -->
+  <div class="divider anim d4"><span>📘 Guías individuales</span></div>
+
+  <div class="guides-grid anim d5">
+
+    <a href="https://pay.hotmart.com/U104251773G?checkoutMode=10" target="_blank" class="guide-link">
+      <div class="guide-img">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_350,q_auto,f_auto/v1770837597/frente_original_xwqe2l.png" alt="Ganar Dinero">
+      </div>
+      <div class="guide-body">
+        <div class="guide-top-row">
+          <span class="guide-new-badge">Nueva</span>
+          <span class="guide-price-tag">$29 USD</span>
+        </div>
+        <div class="guide-title">Cómo ganar dinero como productor</div>
+        <div class="guide-hook">Qué servicios ofrecer, cómo cobrar y conseguir tus primeros clientes.</div>
+      </div>
+      <span class="guide-arrow">→</span>
+    </a>
+
+    <a href="https://pay.hotmart.com/W101421872H?checkoutMode=10" target="_blank" class="guide-link">
+      <div class="guide-img">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_350,q_auto,f_auto/v1770837620/02_frente_variaci%C3%B3n_qccbxv.png" alt="Mezcla Vocal">
+      </div>
+      <div class="guide-body">
+        <div class="guide-top-row">
+          <span></span>
+          <span class="guide-price-tag">$9.90 USD</span>
+        </div>
+        <div class="guide-title">Domina la mezcla vocal</div>
+        <div class="guide-hook">EQ, compresión y efectos para voces claras y potentes.</div>
+      </div>
+      <span class="guide-arrow">→</span>
+    </a>
+
+    <a href="https://pay.hotmart.com/Q101285569P?checkoutMode=10" target="_blank" class="guide-link">
+      <div class="guide-img">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_350,q_auto,f_auto/v1770837728/02_frente_variaci%C3%B3n_o5ebz1.png" alt="Efectos">
+      </div>
+      <div class="guide-body">
+        <div class="guide-top-row">
+          <span></span>
+          <span class="guide-price-tag">$9.90 USD</span>
+        </div>
+        <div class="guide-title">Cómo usar efectos como un pro</div>
+        <div class="guide-hook">Reverb, delay, chorus — qué hace cada uno y cuándo usarlo.</div>
+      </div>
+      <span class="guide-arrow">→</span>
+    </a>
+
+    <a href="https://pay.hotmart.com/A101143952P?off=fe7w8lkm&checkoutMode=10" target="_blank" class="guide-link">
+      <div class="guide-img">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_350,q_auto,f_auto/v1770837878/02_frente_variaci%C3%B3n_como_terminar_canciones_pqkold.png" alt="Termina tus canciones">
+      </div>
+      <div class="guide-body">
+        <div class="guide-top-row">
+          <span></span>
+          <span class="guide-price-tag">$9.90 USD</span>
+        </div>
+        <div class="guide-title">Termina tus canciones ya</div>
+        <div class="guide-hook">Deja de acumular bocetos. Estructura, arranca y finaliza.</div>
+      </div>
+      <span class="guide-arrow">→</span>
+    </a>
+
+    <a href="https://pay.hotmart.com/P100992692V?checkoutMode=10" target="_blank" class="guide-link">
+      <div class="guide-img">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_350,q_auto,f_auto/v1770837898/portada_montada_ck85ye.png" alt="Mastering">
+      </div>
+      <div class="guide-body">
+        <div class="guide-top-row">
+          <span></span>
+          <span class="guide-price-tag">$9.90 USD</span>
+        </div>
+        <div class="guide-title">Mastering sin complicaciones</div>
+        <div class="guide-hook">Volumen, brillo y coherencia sin plugins caros.</div>
+      </div>
+      <span class="guide-arrow">→</span>
+    </a>
+
+    <a href="https://pay.hotmart.com/C100855612V?checkoutMode=10" target="_blank" class="guide-link">
+      <div class="guide-img">
+        <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_350,q_auto,f_auto/v1770837923/portada01sinfondo_fe9xnu.png" alt="Mezcla">
+      </div>
+      <div class="guide-body">
+        <div class="guide-top-row">
+          <span></span>
+          <span class="guide-price-tag">$9.90 USD</span>
+        </div>
+        <div class="guide-title">Mezcla sin complicaciones</div>
+        <div class="guide-hook">Volúmenes, EQ y compresión. Todo lo esencial desde cero.</div>
+      </div>
+      <span class="guide-arrow">→</span>
+    </a>
+
+  </div>
+
+  <!-- ============ GUÍA GRATIS ============ -->
+  <div class="divider anim d6"><span>🎁 Recurso gratuito</span></div>
+
+  <a href="https://offaxisstudio.com/guia-gratuita/" target="_blank" class="free-cta anim d7">
+    <div class="free-img">
+      <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_250,q_auto,f_auto/v1770837934/Portada03_h9cezr.png" alt="Guía Gratis">
+    </div>
+    <div class="free-content">
+      <div class="free-cta-label">100% Gratis</div>
+      <h3>10 errores que todos los productores cometen</h3>
+      <p>Antes de gastar en plugins o cursos, lee esto. Te va a ahorrar meses de frustración.</p>
+    </div>
+    <div class="free-right">
+      <img class="free-muppet" src="https://res.cloudinary.com/diobgaxfl/image/upload/w_180,q_auto,f_auto/v1770837569/paralandingsinfondo_rzarzo.png" alt="Don Fader celebrando">
+      <div class="free-cta-btn">Descargar gratis →</div>
+    </div>
+  </a>
+
+  <!-- ============ MUPPET QUOTE STRIP ============ -->
+  <div class="muppet-strip anim d8">
+    <div class="muppet-strip-img">
+      <img src="https://res.cloudinary.com/diobgaxfl/image/upload/w_200,q_auto,f_auto/v1770837564/se%C3%B1alando_sin_fondo_q5cilv.png" alt="Don Fader">
+    </div>
+    <div class="muppet-strip-text">
+      <p class="muppet-quote">"Todas las guías están pensadas para que apliques desde el primer día, sin equipo caro ni teoría compleja."</p>
+      <span class="muppet-author">— Alonso Cuadros · Músico & Productor · 20+ años de experiencia</span>
+    </div>
+  </div>
+
+  <!-- ============ BOTTOM BAR ============ -->
+  <div class="bottom-bar anim d9">
+    <div class="bottom-links">
+      <a href="https://offaxisstudio.com/blog/" target="_blank" class="bottom-link">📝 Blog</a>
+      <a href="https://offaxisstudio.com/" target="_blank" class="bottom-link">🌐 Sitio web</a>
+      <a href="https://offaxisstudio.com/ofertas-y-colecciones/" target="_blank" class="bottom-link">🏷️ Ofertas</a>
+    </div>
+    <div class="copyright">© 2026 Off Axis Studio · Ciudad de México</div>
+  </div>
+
+</div>
+
+</body>
+</html>

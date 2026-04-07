@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://linksoffaxisstudio.netlify.app/sitemap.xml
